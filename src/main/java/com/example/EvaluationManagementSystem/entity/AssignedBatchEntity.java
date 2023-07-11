@@ -16,7 +16,7 @@ public class AssignedBatchEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Long assignedBatchId;
+    private Long id;
     private String batchId;
     private String userId;
 

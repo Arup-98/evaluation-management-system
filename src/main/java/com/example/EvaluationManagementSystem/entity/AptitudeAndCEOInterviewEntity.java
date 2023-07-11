@@ -16,7 +16,7 @@ public class AptitudeAndCEOInterviewEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private Long ceoInterviewId;
+    private Long id;
     private Long traineeId;
     private Long batchId;
     private Long aptitudeTest;

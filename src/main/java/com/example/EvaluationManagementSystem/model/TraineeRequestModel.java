@@ -1,6 +1,5 @@
-package com.example.EvaluationManagementSystem.entity;
+package com.example.EvaluationManagementSystem.model;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,35 +7,23 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@Entity
-@Table(name="trainee")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class TraineeEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class TraineeRequestModel {
     private Long id;
     private String email;
     private String password;
-    private String gender;
-    private String dateOfBirth;
+    private String fullName;
     private String degreeName;
     private String educationalInstitute;
     private Double cgpa;
     private Integer passingYear;
     private String presentAddress;
-    private String fullName;
     private String profilePicture;
     private String designation;
     private String contactNumber;
-
-
-    @OneToOne (cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private UserEntity user;
-
-
-
+    private String dateOfBirth;
+    private String gender;
 }

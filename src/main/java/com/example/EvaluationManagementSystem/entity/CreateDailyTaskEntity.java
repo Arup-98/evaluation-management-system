@@ -18,7 +18,7 @@ import java.util.Date;
 public class CreateDailyTaskEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long taskId;
+    private Long id;
     private Long batchId;
     private String taskName;
     private Date date;

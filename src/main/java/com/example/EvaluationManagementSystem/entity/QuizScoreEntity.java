@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class QuizScoreEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long quizId;
+    private Long id;
     private Long traineeId;
     private Long batchId;
     private Long quizScore;

@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class MiniProjectEvaluationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long miniProjectId;
+    private Long id;
     private Long traineeId;
     private Long taskId;
     private Long requirementUnderstanding;

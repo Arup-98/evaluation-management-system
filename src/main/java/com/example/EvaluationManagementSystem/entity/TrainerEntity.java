@@ -15,16 +15,21 @@ import lombok.NoArgsConstructor;
 public class TrainerEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long trainerId;
-    private Long userId;
+    private Long id;
     private String fullName;
+    private String email;
+    private String password;
     private String profilePicture;
     private String designation;
     private String joiningDate;
-    private Long totalYearsOfExperience;
+    private Long yearsOfExperience;
     private String expertises;
     private String contactNumber;
     private String presentAddress;
+
+    @OneToOne (cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private UserEntity user;
 
 
 }

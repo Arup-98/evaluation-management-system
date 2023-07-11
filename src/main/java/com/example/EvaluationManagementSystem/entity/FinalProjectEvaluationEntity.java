@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class FinalProjectEvaluationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long finalProjectId;
+    private Long id;
     private Long userId;
     private Long requirementUnderstanding;
     private Long expectedOutput;

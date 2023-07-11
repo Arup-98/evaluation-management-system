@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class FinalScoreEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long finalId;
+    private Long id;
     private Long traineeId;
     private Long batchId;
     private Long totalScore;

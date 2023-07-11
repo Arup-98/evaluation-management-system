@@ -15,8 +15,8 @@ import lombok.NoArgsConstructor;
 public class DailyTaskEvaluationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long dailyTaskId;
-    private Long userId;
+    private Long id;
+
     private Long taskId;
     private String requirementUnderstanding;
     private String expectedOutput;
