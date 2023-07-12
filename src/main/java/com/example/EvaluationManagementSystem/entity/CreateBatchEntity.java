@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -23,6 +24,7 @@ public class CreateBatchEntity {
     private String batchName;
     private String startingDate;
     private String endingDate;
+
 
     @Builder.Default
     @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)

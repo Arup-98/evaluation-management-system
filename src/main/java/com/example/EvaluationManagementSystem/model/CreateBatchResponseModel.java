@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,4 +16,6 @@ public class CreateBatchResponseModel {
     private String batchName;
     private String startingDate;
     private String endingDate;
+    private int totalTrainee;
+    private List<Long> traineeIds;
 }

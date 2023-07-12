@@ -1,4 +1,5 @@
 package com.example.EvaluationManagementSystem.service;
 
-public class UserService {
+public interface UserService {
+
 }

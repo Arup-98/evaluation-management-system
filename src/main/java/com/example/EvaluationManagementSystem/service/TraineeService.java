@@ -1,4 +1,4 @@
 package com.example.EvaluationManagementSystem.service;
 
-public class TraineeService {
+public interface TraineeService {
 }
