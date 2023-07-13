@@ -18,10 +18,10 @@ import java.util.Date;
 public class SubmitTaskEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long submitId;
-    private Long taskId;
-    private Long traineeId;
+    private Long id;
     private Date date;
-    private File fileUpload;
+    private String fileUpload;
+    private Long traineeId;
+    private Long taskId;
 
 }

@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.File;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="daily_task")
@@ -19,8 +20,15 @@ public class CreateDailyTaskEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long batchId;
     private String taskName;
-    private Date date;
-    private File task;
+    private String date;
+    private String taskFile;
+    private Long batchId;
+
+    @ManyToOne
+    @JoinColumn(name="trainer_id")
+    private TrainerEntity trainerEntity;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    public List<SubmitTaskEntity> submitTaskEntities;
 }

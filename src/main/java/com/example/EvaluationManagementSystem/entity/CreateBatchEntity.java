@@ -26,9 +26,17 @@ public class CreateBatchEntity {
     private String endingDate;
 
 
-    @Builder.Default
+//    @Builder.Default
     @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private Set<TraineeEntity> trainees = new HashSet<>();
+
+//    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+//    @JoinTable(
+//            name = "create_daily_task",
+//            joinColumns = @JoinColumn(name = "task_id"),
+//            inverseJoinColumns = @JoinColumn(name = "batch_id")
+//    )
+//    private Set<CreateDailyTaskEntity> createTask = new HashSet<>();
 
 
 }

@@ -16,7 +16,14 @@ public class FinalScoreEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long traineeId;
-    private Long batchId;
-    private Long totalScore;
+    private Double dailyMarks;
+    private Double miniProject;
+    private Double midProject;
+    private Double managerEvaluation;
+    private Double croHrInterview;
+    private Double totalMarks;
+
+    @OneToOne
+    @JoinColumn(name="trainee_id")
+    public TraineeEntity traineeEntity;
 }

@@ -6,7 +6,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="trainee")
@@ -36,6 +38,15 @@ public class TraineeEntity {
     @OneToOne (cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private UserEntity user;
+
+    @OneToMany (mappedBy = "trainee")
+    private List<TaskEvaluationEntity> taskEvaluationEntity = new ArrayList<>();
+
+    @OneToOne(mappedBy = "traineeEntity")
+    private ManagersEvaluationEntity managersEvaluationEntity;
+
+    @OneToOne(mappedBy = "traineeEntity")
+    private AptitudeAndCEOInterviewEntity aptitudeAndCEOInterviewEntity;
 
 
 

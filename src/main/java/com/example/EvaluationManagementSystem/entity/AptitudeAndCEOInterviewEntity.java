@@ -17,10 +17,15 @@ public class AptitudeAndCEOInterviewEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
-    private Long traineeId;
-    private Long batchId;
-    private Long aptitudeTest;
-    private Long hrInterview;
-    private Long totalScore;
+//    private Long traineeId;
+//    private Long batchId;
+    private Double aptitudeTest;
+    private Double hrInterview;
+    private Double totalScore;
+
+    @OneToOne
+    @JoinColumn(name="trainee_id")
+    public TraineeEntity traineeEntity;
+
 
 }

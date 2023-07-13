@@ -16,14 +16,18 @@ public class ManagersEvaluationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long traineeId;
-    private Long batchId;
-    private Long commonScore;
-    private Long officeRules;
-    private Long sincerity;
-    private Long qualityMindset;
-    private Long attendance;
-    private Long communicationSkill;
-    private Long englishLanguageSkill;
+//    private Long traineeId;
+//    private Long batchId;
+    private Double commonScore;
+    private Double officeRules;
+    private Double sincerity;
+    private Double qualityMindset;
+    private Double attendance;
+    private Double communicationSkill;
+    private Double englishLanguageSkill;
+
+    @OneToOne
+    @JoinColumn(name="trainee_id")
+    public TraineeEntity traineeEntity;
 
 }
