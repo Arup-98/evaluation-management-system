@@ -9,7 +9,10 @@ import java.util.List;
 
 public interface SubmitTaskService {
     ResponseEntity<Object> submitTask(SubmitTaskRequestModel submitTaskRequestModel);
-    ResponseEntity<List<SubmitTaskEntity>> getSubmitTaskByTraineeId(Long traineeId);
-    ResponseEntity<List<SubmitTaskEntity>> getSubmitTasksByCreateTaskId(Long createTaskId);
+//    ResponseEntity<List<SubmitTaskEntity>> getSubmitTaskByTraineeId(Long traineeId);
+////    ResponseEntity<List<SubmitTaskResponseModel>> getSubmitTasksByCreateTaskId(Long createTaskId);
 
+    List<SubmitTaskResponseModel> getTaskSubmissionsById(Long taskId);
+
+    SubmitTaskResponseModel getSubmissionsByIdUnderTask(Long taskId, Long submissionsId);
 }

@@ -39,14 +39,7 @@ public class TraineeEntity {
     @JoinColumn(name = "user_id")
     private UserEntity user;
 
-    @OneToMany (mappedBy = "trainee")
-    private List<TaskEvaluationEntity> taskEvaluationEntity = new ArrayList<>();
 
-    @OneToOne(mappedBy = "traineeEntity")
-    private ManagersEvaluationEntity managersEvaluationEntity;
-
-    @OneToOne(mappedBy = "traineeEntity")
-    private AptitudeAndCEOInterviewEntity aptitudeAndCEOInterviewEntity;
 
 
 

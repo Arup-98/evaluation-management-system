@@ -15,6 +15,6 @@ public class CreateDailyTaskRequestModel {
 
     private String taskName;
     private String date;
-    private String task;
+    private String taskFile;
     private Long batchId;
 }

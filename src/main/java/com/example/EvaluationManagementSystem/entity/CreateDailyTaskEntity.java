@@ -30,5 +30,6 @@ public class CreateDailyTaskEntity {
     private TrainerEntity trainerEntity;
 
     @OneToMany(cascade = CascadeType.ALL)
-    public List<SubmitTaskEntity> submitTaskEntities;
+    public List<SubmitTaskEntity> submissions;
+
 }

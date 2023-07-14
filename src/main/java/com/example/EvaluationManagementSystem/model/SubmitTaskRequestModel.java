@@ -12,7 +12,6 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SubmitTaskRequestModel {
-    private Long id;
     private Long traineeId;
     private Long taskId;
     private Date date;

@@ -32,7 +32,7 @@ public class CreateDailyTaskServiceImpl implements CreateDailyTaskService {
 //                .id(createDailyTaskRequestModel.getId()) // Set the ID explicitly
                 .taskName(createDailyTaskRequestModel.getTaskName())
                 .date(createDailyTaskRequestModel.getDate())
-                .taskFile(createDailyTaskRequestModel.getTask())
+                .taskFile(createDailyTaskRequestModel.getTaskFile())
                 .batchId(createDailyTaskRequestModel.getBatchId())
                 .build();
 
@@ -60,7 +60,7 @@ public class CreateDailyTaskServiceImpl implements CreateDailyTaskService {
                 .id( createTask.getId())
                 .taskName( createTask.getTaskName())
                 .date( createTask.getDate())
-                .task( createTask.getTaskFile())
+                .taskFile( createTask.getTaskFile())
                 .build();
 
 

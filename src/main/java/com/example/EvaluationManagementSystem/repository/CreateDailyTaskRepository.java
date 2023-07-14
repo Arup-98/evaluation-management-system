@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface CreateDailyTaskRepository extends JpaRepository<CreateDailyTaskEntity,Long> {
 //    CreateDailyTaskEntity findByIdString taskName);
+          CreateDailyTaskEntity findById(long id);
 }

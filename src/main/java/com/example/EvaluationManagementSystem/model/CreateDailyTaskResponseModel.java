@@ -12,9 +12,10 @@ import java.io.File;
 @AllArgsConstructor
 @Builder
 public class CreateDailyTaskResponseModel {
+
     private Long id;
     private String taskName;
     private String date;
-    private String task;
+    private String taskFile;
     private Long batchId;
 }

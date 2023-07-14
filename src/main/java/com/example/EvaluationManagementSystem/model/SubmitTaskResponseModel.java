@@ -12,10 +12,9 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SubmitTaskResponseModel {
-    private Long id;
+    private Long submissionId;
     private Long traineeId;
-    private Long taskId;
     private Date date;
-    private String fileUpload;
+
 
 }

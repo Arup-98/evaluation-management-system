@@ -19,9 +19,10 @@ public class SubmitTaskEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @ManyToOne
+    private CreateDailyTaskEntity task;
+
     private Date date;
     private String fileUpload;
     private Long traineeId;
-    private Long taskId;
-
 }
