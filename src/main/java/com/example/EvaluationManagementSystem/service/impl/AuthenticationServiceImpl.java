@@ -38,20 +38,6 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public ResponseEntity<Object> createAdmin(AdminRequestModel adminRequestModel) {
-       //  Check if the admin ID is null
-//        if (adminRequestModel.getId() != null) {
-//            UserEntity userEntityById = userRepository.findById(adminRequestModel.getId()).orElse(null);
-//            if (userEntityById != null) {
-//                System.out.println("Admin already exists with the given ID");
-//                return; // Exit the method if the admin already exists
-//            }
-//        }
-//
-//        UserEntity userEntityByEmail = userRepository.findByEmail(adminRequestModel.getEmail());
-//        if (userEntityByEmail != null) {
-//            System.out.println("Admin already exists with the given email");
-//            return ; // Exit the method if the admin already exists
-//        }
 
         // Create a new UserEntity
         UserEntity user= UserEntity.builder()
@@ -77,37 +63,24 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         // Save the AdminEntity
          AdminEntity savedadmin= adminRepository.save(admin);
         var jwtToken = jwtService.generateToken(user);
+//
+//         AdminResponseModel adminResponseModel = AdminResponseModel.builder()
+//                 .id(savedadmin.getId())
+//                 .fullName(savedadmin.getFullName())
+//                 .email(savedadmin.getEmail())
+//                 .password(savedadmin.getPassword())
+//                 .contactNumber(savedadmin.getContactNumber())
+//                 .token(jwtToken)
+//                 .build();
 
-         AdminResponseModel adminResponseModel = AdminResponseModel.builder()
-                 .id(savedadmin.getId())
-                 .fullName(savedadmin.getFullName())
-                 .email(savedadmin.getEmail())
-                 .password(savedadmin.getPassword())
-                 .contactNumber(savedadmin.getContactNumber())
-                 .token(jwtToken)
-                 .build();
 
-
-         return new ResponseEntity<>(adminResponseModel, HttpStatus.CREATED);
+         return new ResponseEntity<>(savedadmin , HttpStatus.CREATED);
 
     }
 
     @Override
-    public void createTrainee(TraineeRequestModel traineeRequestModel) {
-        // Check if the trainee ID is null
-        if (traineeRequestModel.getId() != null) {
-            TraineeEntity traineeEntityById = traineeRepository.findById(traineeRequestModel.getId()).orElse(null);
-            if (traineeEntityById != null) {
-                System.out.println("Trainee already exists with the given ID");
-                return; // Exit the method if the trainee already exists
-            }
-        }
+    public ResponseEntity<Object> createTrainee(TraineeRequestModel traineeRequestModel) {
 
-        TraineeEntity traineeEntityByEmail = traineeRepository.findByEmail(traineeRequestModel.getEmail());
-        if (traineeEntityByEmail != null) {
-            System.out.println("Trainee already exists with the given email");
-            return; // Exit the method if the trainee already exists
-        }
 
         // Create a new UserEntity
         UserEntity user = UserEntity.builder()
@@ -138,7 +111,10 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .build();
 
         // Save the TraineeEntity
-        traineeRepository.save(trainee);
+        TraineeEntity savedTrainee= traineeRepository.save(trainee);
+        var jwtToken = jwtService.generateToken(user);
+
+        return new ResponseEntity<>(savedTrainee , HttpStatus.CREATED);
 
 
 
@@ -146,21 +122,8 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     }
 
     @Override
-    public void createTrainer(TrainerRequestModel trainerRequestModel) {
-        // Check if the trainer ID is null
-        if (trainerRequestModel.getId() != null) {
-            TrainerEntity trainerEntityById = trainerRepository.findById(trainerRequestModel.getId()).orElse(null);
-            if (trainerEntityById != null) {
-                System.out.println("Trainer already exists with the given ID");
-                return; // Exit the method if the trainer already exists
-            }
-        }
+    public ResponseEntity<Object> createTrainer(TrainerRequestModel trainerRequestModel) {
 
-        TrainerEntity trainerEntityByEmail = trainerRepository.findByEmail(trainerRequestModel.getEmail());
-        if (trainerEntityByEmail != null) {
-            System.out.println("Trainer already exists with the given email");
-            return; // Exit the method if the trainer already exists
-        }
 
         // Create a new UserEntity
         UserEntity user = UserEntity.builder()
@@ -189,7 +152,10 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 .build();
 
         // Save the TrainerEntity
-        trainerRepository.save(trainer);
+        TrainerEntity savedTrainer= trainerRepository.save(trainer);
+        var jwtToken = jwtService.generateToken(user);
+
+        return new ResponseEntity<>(savedTrainer , HttpStatus.CREATED);
 
     }
     public AuthenticationResponseModel authenticate(LoginRequestModel request) {

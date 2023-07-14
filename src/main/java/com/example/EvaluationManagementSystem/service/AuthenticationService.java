@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 
 public interface AuthenticationService {
     ResponseEntity<Object> createAdmin(AdminRequestModel adminRequestModel);
-    void createTrainee(TraineeRequestModel traineeRequestModel);
-    void createTrainer(TrainerRequestModel trainerRequestModel);
+    ResponseEntity<Object> createTrainee(TraineeRequestModel traineeRequestModel);
+    ResponseEntity<Object>createTrainer(TrainerRequestModel trainerRequestModel);
 
 }

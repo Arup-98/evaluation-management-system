@@ -37,13 +37,13 @@ public class SubmitTaskServiceImpl implements SubmitTaskService {
                 .build();
 
         SubmitTaskEntity savedSubmitTask = submitTaskRepository.save(submitTaskEntity);
-        SubmitTaskResponseModel responseModel = SubmitTaskResponseModel.builder()
-                .submissionId(savedSubmitTask.getId())
-               .traineeId(savedSubmitTask.getTraineeId())
-                .date(savedSubmitTask.getDate())
-                .build();
+//        SubmitTaskResponseModel responseModel = SubmitTaskResponseModel.builder()
+//                .submissionId(savedSubmitTask.getId())
+//               .traineeId(savedSubmitTask.getTraineeId())
+//                .date(savedSubmitTask.getDate())
+//                .build();
 
-        return new ResponseEntity<>(responseModel, HttpStatus.CREATED);
+        return new ResponseEntity<>(savedSubmitTask, HttpStatus.CREATED);
     }
 
 //    @Override

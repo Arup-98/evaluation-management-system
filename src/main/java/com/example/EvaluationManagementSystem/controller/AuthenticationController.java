@@ -19,16 +19,6 @@ public class AuthenticationController {
     private final AuthenticationService authenticationService;
     private final AuthenticationServiceImpl service;
 
-
-
-
-//    @Autowired
-//    public AuthenticationController(AuthenticationService authenticationService) {
-//        this.authenticationService = authenticationService;
-//
-//    }
-
-
     @PostMapping("/createAdmin")
     public ResponseEntity<Object> createAdmin(@RequestBody AdminRequestModel adminModel) {
         return authenticationService.createAdmin(adminModel);
@@ -37,16 +27,16 @@ public class AuthenticationController {
 
 
     @PostMapping("/createTrainee")
-    public String createTrainee(@RequestBody TraineeRequestModel traineeRequestModel) {
-        authenticationService.createTrainee(traineeRequestModel);
-        return ("Trainee added successfully");
+    public ResponseEntity<Object> createTrainee(@RequestBody TraineeRequestModel traineeRequestModel) {
+       return authenticationService.createTrainee(traineeRequestModel);
+
     }
 
 
     @PostMapping("/createTrainer")
-    public String createTrainer(@RequestBody TrainerRequestModel trainerRequestModel) {
-        authenticationService.createTrainer(trainerRequestModel);
-        return ("Trainer added Successfully");
+    public ResponseEntity<Object> createTrainer(@RequestBody TrainerRequestModel trainerRequestModel) {
+      return  authenticationService.createTrainer(trainerRequestModel);
+
     }
     @PostMapping("/login")
     public ResponseEntity<Object> authenticate(

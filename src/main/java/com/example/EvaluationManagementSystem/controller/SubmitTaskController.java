@@ -18,7 +18,7 @@ public class SubmitTaskController {
     private final SubmitTaskRepository submitTaskRepository;
 
     @PostMapping("/submit")
-    public ResponseEntity<Object> submitTask(@RequestBody SubmitTaskRequestModel submitTaskRequestModel) {
+    public ResponseEntity<Object> submitTask( @RequestBody SubmitTaskRequestModel submitTaskRequestModel) {
         return submitTaskService.submitTask(submitTaskRequestModel);
     }
 
